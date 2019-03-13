@@ -1,0 +1,14 @@
+'''
+# Underscrore in Python
+1. single _ in the head
+'_var' : private variable
+
+2. single _ in trailing
+'var_' : avoid clashing with Python keyword
+
+3. double __init__  :  magic function
+
+4. __var  超级无敌hide
+
+
+'''
