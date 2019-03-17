@@ -1,13 +1,14 @@
-def reverse(x):
-    output = list(x)
-    output = output[::-1]
-    return ''.join(output)
+import itchat
+import time, re
+from itchat.content import *
 
-def generator():
-    for x in range(5):
-        yield x
-if __name__ == '__main__':
-    #print(reverse('first'))
-    my_ge = generator()
-    for e in my_ge:
-        print(e)
+@itchat.msg_register([TEXT])
+def text_reply(msg):
+    match = re.search('year', msg['Text']).span()
+    if(match):
+        itchat.send(('Happy new year'),msg['FromUserName'])
+
+    print(msg.FromUserName)
+
+itchat.auto_login(enableCmdQR=2)
+itchat.run(True)
