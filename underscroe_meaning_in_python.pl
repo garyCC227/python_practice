@@ -10,5 +10,9 @@
 
 4. __var  超级无敌hide
 
+how to better comment for your python code:
+
+1. in each of class, description of the class and its attribute
+2. good #comment to show what this line does
 
 '''

@@ -49,7 +49,7 @@ class Hand(object):
         self.value = 0
         self.aces11 = 0
         self.aces0 = 0
-
+        
     def add_card(self, card):
         self.cards.append(card)
         #check if card is Ace
