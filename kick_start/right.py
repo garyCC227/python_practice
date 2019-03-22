@@ -23,9 +23,9 @@ def has_odd(t):
                     break
 
             if plus_num < minus_num:
-                print ("Case #{}: {}".format(i, plus_couter))
+                print("Case #{}: {}".format(i, plus_couter))
             else:
-                print ("Case #{}: {}".format(i, minus_couter))
+                print("Case #{}: {}".format(i, minus_couter))
 
 
 def is_existed(num):

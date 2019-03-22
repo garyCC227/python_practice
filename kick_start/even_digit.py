@@ -1,5 +1,13 @@
 import re
 
+
+''''
+kick start 2017 round A: even digit
+O(n) time
+mess code style,
+but it is use to let a input number to show no odd digits by +1 or -1
+find minimal increment or decrement
+'''
 T = int(input())
 
 def has_odd(T):
@@ -17,10 +25,10 @@ def has_odd(T):
 
             #TODO find minus press
             minus_press = minus_even_num(num, largest_odd_place)
-            if(minus_press < plus_press):
-                print("Case #{}: num is {} = {}".format(i,num, minus_press))
+            if(minus_press < plus_press or largest_odd_digit == 9):
+                print("Case #{}: {}".format(i, minus_press))
             else:
-                print("Case #{}: num is {} = {}".format(i, num, plus_press))
+                print("Case #{}: {}".format(i, plus_press))
 
 def find_odd_by_place(num):
     '''
