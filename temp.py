@@ -1,5 +1,5 @@
 import time
-##
+#
 t1 = time.time()
 
 t = int(input())
