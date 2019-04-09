@@ -1,5 +1,60 @@
 
 class Sorting(object):
+    def partition(self, arr,low,high):
+        i = ( low-1 )         # index of smaller element
+        pivot = arr[high]     # pivot
+
+        for j in range(low , high):
+
+            # If current element is smaller than or
+            # equal to pivot
+            if   arr[j] <= pivot:
+
+                # increment index of smaller element
+                i = i+1
+                arr[i],arr[j] = arr[j],arr[i]
+
+        arr[i+1],arr[high] = arr[high],arr[i+1]
+        return ( i+1 )
+
+    # Function to do Quick sort
+    def quickSort(self, arr,low,high):
+        if low < high:
+
+            # pi is partitioning index, arr[p] is now
+            # at right place
+            pi = self.partition(arr,low,high)
+
+            # Separately sort elements before
+            # partition and after partition
+            self.quickSort(arr, low, pi-1)
+            self.quickSort(arr, pi+1, high)
+
+    def insertion_sort(self, list):
+        for i in range(1, len(list)):
+            #remeber the current value, need to swap it later
+            key = list[i]
+            #get its prev values
+            j = i-1
+            while (j>=0 and key < list[j]):
+                list[j+1] = list[j]
+                j-=1
+            list[j+1] = key
+
+    def selection_sort(self, list):
+        for i in range(len(list)):
+
+            # Find the minimum element in remaining
+            min_idx = i
+            for j in range(i+1, len(list)):
+                if list[min_idx] > list[j]:
+                    min_idx = j
+
+            # Swap the found minimum element with
+            # the first element
+            list[i], list[min_idx] = list[min_idx], list[i]
+
+        return list
 
     def mergesort(self,list):
         #len(1) lsit defined as sorted
@@ -54,5 +109,5 @@ class Sorting(object):
 if __name__ == '__main__':
     sort = Sorting()
     list = [5, 1, 6, -3, 9, 8]
-    sort.bubble_sort(list)
+    sort.quickSort(list, 0, len(list)-1)
     print(list)
