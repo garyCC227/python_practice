@@ -142,3 +142,5 @@ if __name__ == '__main__':
     print(bst.min_value)
     bst.remove(1)
     bst.traversal()
+
+    
